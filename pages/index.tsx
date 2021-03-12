@@ -1,18 +1,10 @@
-import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
+import Layout from '../components/Layout';
 
 export default function Home() {
   return (
-    <div>
-      <Head>
-        <title>Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-   
-
+    <Layout pageTitle='HomePage'>
    <h1 className={styles.red}>Hello<span>World!</span></h1>
-
-
-    </div>
+    </Layout>
   )
 }
