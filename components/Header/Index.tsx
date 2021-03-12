@@ -10,7 +10,7 @@ const Header: React.FC <HeaderProps> = () => {
       justifyContent: 'space-between'
       
       }}>
-    <AppLink href='/' label='Next.js'/>
+    <AppLink href='/' label='Home'/>
     <nav>
     <AppLink href='/about' label='About'/>
     <AppLink href='/courses' label='Courses'/>
