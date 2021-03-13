@@ -45,8 +45,6 @@ export const getStaticProps: GetStaticProps <BlogPostProps> = async({params}) =>
  const md = fs.readFileSync(path.join('./_posts', `${slug}.md`)).toString()
  const {data, content} = matter(md)
 
-
-
  return{
   props:{
   frontmatter:{
