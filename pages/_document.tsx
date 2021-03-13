@@ -3,10 +3,10 @@ import {ServerStyleSheet} from 'styled-components'
 
 export default class Document extends NextDocument {
 static async getStaticProps(ctx) {
-  
 const sheet = new ServerStyleSheet()
 const originalRenderPage = ctx.renderPage
-try{
+
+try {
 ctx.renderPage = () => originalRenderPage({
 enchanceApp: (App) => props => sheet.collectStyles(<App {...props} />)
 })
@@ -19,6 +19,9 @@ styles:(
 {sheet.getStyleElement()}
 </>
 )}
+}
+finally{
+sheet.seal()
 }
 }
 }

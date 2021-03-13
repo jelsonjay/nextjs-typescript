@@ -7,7 +7,7 @@ padding: 10px 20px;
 border-radius: 5px;
 text-transform: capitalize;
 cursor: pointer;
-color: ${({theme}) => theme.mainWhite};
+color: ${({theme}) => theme.mainOrange};
 font-weight: bold;
 
 &:hover{

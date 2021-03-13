@@ -1,4 +1,3 @@
-import styles from '../styles/Home.module.scss'
 import Layout from '../components/Layout';
 import PostPreview from '../types/PostPreview'
 import { NextPage, GetStaticProps } from 'next';
@@ -6,6 +5,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import PostListing from '../components/PostListing'
 import Hero from '../components/Hero'
+import MainSection from '../components/MainSection'
 
 
 interface BlogProps{
@@ -14,11 +14,9 @@ posts: PostPreview[]
 
  const Home: NextPage<BlogProps> = ({posts}) => {
   return (
-    <Layout pageTitle='HomePage'>
-   <Hero>
-    <h1 className={styles.red}>Hello<span>World!</span></h1>
-    <PostListing posts={posts} />
-   </Hero>
+  <Layout pageTitle='HomePage'>
+   <Hero />
+   <MainSection posts={posts} />
   </Layout>
   )
 }

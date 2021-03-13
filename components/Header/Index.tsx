@@ -7,19 +7,19 @@ import {Logo} from '../../styles/TextElement'
 
 interface HeaderProps {}
 
-const Header: React.FC <HeaderProps> = () => {
+const Header:React.FC<HeaderProps> = () => {
   return (
     <HeaderElement>
     <Container>
     <Logo>
-    <AppLink href='/' label='Home'/>
+    <AppLink href='/' label='Logo'/>
     </Logo>
-    <nav>
+ 
     <AppLink href='/' label='Home'/>
     <AppLink href='/about' label='About'/>
     <AppLink href='/courses' label='Courses'/>
     <AppLink href='/contact' label='Contact'/>
-    </nav>
+  
     </Container>
     </HeaderElement>
   )

@@ -16,11 +16,11 @@ font-size: calc(16px + .5vw);
 font-family: 'Fira Sans', 'Lato', sans-serif;
 line-height: 1.7;
 background: ${({theme}) => theme.mainWhite};
-color: ${({theme}) => theme.mainDark}
+color: ${({theme}) => theme.mainMedium}
 }
 a{
 text-decoration: none;
-color: ${({theme}) => theme.mainLight}
+color: ${({theme}) => theme.mainBlue}
 }
 ul{
 list-style: none;

@@ -5,10 +5,11 @@ div{
 display: flex;
 justify-content: space-between;
 align-items: center;
-height:65px;
+height: 65px;
+
 }
 a{
-padding: 0 0.5rem;
+padding: 0 0.2rem;
 }
 a:hover{
 text-decoration: underline;
