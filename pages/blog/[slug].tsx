@@ -4,9 +4,12 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 import ReactMarkdown from 'react-markdown'
+import { Container } from '../../styles/Container';
+import { Title } from '../../styles/TextElement'
 
 interface BlogPostProps {
 content: string
+excerpt: string
 frontmatter:{
 title:string
 author:string
@@ -14,15 +17,15 @@ author:string
 }
 }
 
-const BlogPost: NextPage<BlogPostProps> = ({frontmatter, content}) => {
+const BlogPost: NextPage<BlogPostProps> = ({frontmatter, content, excerpt}) => {
 return(
-  <Layout pageTitle={frontmatter.title}>
+  <Layout pageTitle={frontmatter.title} description={excerpt}>
   {/* {JSON.stringify(frontmatter, null, 2)} */}
-  <div>
-  <h1>{frontmatter.title}</h1>
+  <Container>
+  <Title>{frontmatter.title}</Title>
   <h3>By: {frontmatter.author} </h3>
   <ReactMarkdown source={content} />
-  </div>
+  </Container>
   </Layout>
 )
 }
@@ -43,7 +46,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps <BlogPostProps> = async({params}) => {
  const slug = params?.slug
  const md = fs.readFileSync(path.join('./_posts', `${slug}.md`)).toString()
- const {data, content} = matter(md)
+ const {data, content, excerpt} = matter(md)
 
  return{
   props:{
@@ -52,6 +55,7 @@ export const getStaticProps: GetStaticProps <BlogPostProps> = async({params}) =>
   author: data.author,
 
   },
+  excerpt,
   content,
   }
  }
